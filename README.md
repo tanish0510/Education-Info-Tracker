@@ -54,4 +54,6 @@ Your education journey is about to get a whole lot better. Let's build the futur
 
 # Demonstration of my Project
 
+![result](https://github.com/tanish0510/Education-Info-Tracker/blob/main/34B24365-7C39-498F-B8A4-24C477A31118.jpeg)
+
 
