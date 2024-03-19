@@ -13,11 +13,11 @@ class Register:
         self.root.config(bg="white")
 
         # Background Image
-        self.bg = ImageTk.PhotoImage(file="images/b2.jpg")
+        self.bg = ImageTk.PhotoImage(file="snapshots/b2.jpg")
         bg = Label(self.root, image=self.bg).place(x=250, y=0, relwidth=1, relheight=1)
 
         # Left Image
-        self.left = ImageTk.PhotoImage(file="images/side.png")
+        self.left = ImageTk.PhotoImage(file="snapshots/side.png")
         left = Label(self.root, image=self.left).place(x=80, y=80, width=400, height=500)
 
         # Register Frame
@@ -68,7 +68,7 @@ class Register:
         self.var_chk = IntVar()
         chk = Checkbutton(frame1, text="I Agree The Terms & Conditions", variable=self.var_chk, onvalue=1, offvalue=0, bg="white",fg="black", font=("times new roman", 12)).place(x=50, y=380)
 
-        self.btn_img = ImageTk.PhotoImage(file="images/register.png")
+        self.btn_img = ImageTk.PhotoImage(file="snapshots/register.png")
         btn_register = Button(frame1, image=self.btn_img, bd=0, cursor="hand2", command=self.register_data).place(x=50, y=420)
 
         btn_login = Button(self.root, text="Sign In", font=("times new roman", 20), bd=0, cursor="hand2", command=self.login_window).place(x=190, y=460, width=180)

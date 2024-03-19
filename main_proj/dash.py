@@ -18,7 +18,7 @@ class RMS:
         self.root.geometry("1350x655+0+0")
         self.root.config(bg="white")
 
-        self.logo_dash = ImageTk.PhotoImage(file="images/logo_p.png")
+        self.logo_dash = ImageTk.PhotoImage(file="snapshots/logo_p.png")
 
         title = Label(self.root, text="Student Result Management System", padx=10, compound=LEFT, image=self.logo_dash,
                       font=("goudy old style", 20, "bold"), bg="#033054", fg="white").place(x=0, y=0, relwidth=1,
@@ -46,7 +46,7 @@ class RMS:
         btn_exit = Button(M_Frame, text="Exit", font=("goudy old style", 15, "bold"), bg="#0b5377", fg="black",
                           cursor="hand2", command=self.exit_).place(x=1060, y=5, width=180, height=40)
 
-        self.bg_img_pil = Image.open("images/bg.png")
+        self.bg_img_pil = Image.open("snapshots/bg.png")
         self.bg_img_pil = self.bg_img_pil.resize(
             (920, 350), Image.ANTIALIAS if "ANTIALIAS" in dir(Image) else Image.BICUBIC)
         self.bg_img = ImageTk.PhotoImage(self.bg_img_pil)
@@ -108,7 +108,7 @@ class RMS:
         sec_ = (s / 60) * 360
 
         self.clock_image(hr, min_, sec_)
-        self.img = ImageTk.PhotoImage(file="images/clock_new.png")
+        self.img = ImageTk.PhotoImage(file="snapshots/clock_new.png")
         self.lbl.config(image=self.img)
         self.lbl.after(200, self.working)
 
@@ -116,7 +116,7 @@ class RMS:
         clock = Image.new("RGB", (400, 400), (8, 25, 35))
         draw = ImageDraw.Draw(clock)
 
-        bg = Image.open("images/c.png")
+        bg = Image.open("snapshots/c.png")
         bg = bg.resize((300, 300), Image.ANTIALIAS if "ANTIALIAS" in dir(
             Image) else Image.BICUBIC)
         clock.paste(bg, (50, 50))
@@ -131,7 +131,7 @@ class RMS:
         draw.line((origin, 200 + 100 * sin(radians(sec_)), 200 -
                   100 * cos(radians(sec_))), fill="yellow", width=2)
         draw.ellipse((195, 195, 210, 210), fill="#1AD5D5")
-        clock.save("images/clock_new.png")
+        clock.save("snapshots/clock_new.png")
 
     def add_course(self):
         self.new_win = Toplevel(self.root)
@@ -154,7 +154,7 @@ class RMS:
             "Confirm", "Do you really want to logout?", parent=self.root)
         if op:
             self.root.destroy()
-            os.system("python login.py")
+            os.system("python3 login.py")
 
     def exit_(self):
         op = messagebox.showwarning(

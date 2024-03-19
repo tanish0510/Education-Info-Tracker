@@ -21,14 +21,14 @@ class reportClass:
         lbl_search=Label(self.root,text="Search By Roll No.",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=280,y=100)
         txt_search=Entry(self.root,textvariable=self.var_search,font=("goudy old style", 20),bg="lightyellow",fg="black").place(x=520,y=100,width=150)
 
-        btn_search=Button(self.root,text="Search",font=("goudy old style",20,"bold"),bg="#2196f3",fg="black",cursor="hand2", command=self.seacrh).place(x=680,y=100,width=100,height=35)
+        btn_search=Button(self.root,text="Search",font=("goudy old style",20,"bold"),bg="#2196f3",fg="black",cursor="hand2", command=self.search).place(x=680,y=100,width=100,height=35)
 
         btn_clear=Button(self.root,text="Clear",font=("goudy old style",20,"bold"),bg="gray",fg="black",cursor="hand2", command=self.clear).place(x=790,y=100,width=100,height=35)
 
         #***********Result Labels***********
         lbl_roll=Label(self.root,text="Roll No.",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=150,y=230,width=150,height=50)
         lbl_name=Label(self.root,text="Name",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=300,y=230,width=150,height=50)
-        lbl_course=Label(self.root,text="Course",font=("goudy old style", 20, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=450,y=230,width=150,height=50)
+        lbl_course=Label(self.root,text="Course",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=450,y=230,width=150,height=50)
         lbl_marks_ob=Label(self.root,text="Marks Obtained",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=600,y=230,width=150,height=50)
         lbl_full_marks=Label(self.root,text="Total Marks",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=750,y=230,width=150,height=50)
         lbl_per=Label(self.root,text="Percentage",font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE).place(x=900,y=230,width=150,height=50)
@@ -37,7 +37,7 @@ class reportClass:
         self.roll.place(x=150,y=280,width=150,height=50)
         self.name=Label(self.root,font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE)
         self.name.place(x=300,y=280,width=150,height=50)
-        self.course=Label(self.root,font=("goudy old style", 20, "bold"),bg="white",bd=2,relief=GROOVE)
+        self.course=Label(self.root,font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE)
         self.course.place(x=450,y=280,width=150,height=50)
         self.marks_ob=Label(self.root,font=("goudy old style", 15, "bold"),bg="white",fg="black",bd=2,relief=GROOVE)
         self.marks_ob.place(x=600,y=280,width=150,height=50)
@@ -50,7 +50,7 @@ class reportClass:
         btn_delete=Button(self.root,text="Delete",font=("goudy old style",20,"bold"),bg="red",fg="black",cursor="hand2", command=self.delete).place(x=500,y=350,width=150,height=35)
 
 #==============================================================
-    def seacrh(self):
+    def search(self):
         con=sqlite3.connect(database="rms.db")
         cur=con.cursor()
         try:

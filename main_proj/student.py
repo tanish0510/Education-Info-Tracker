@@ -91,7 +91,7 @@ class studentClass:
 
         lbl_search_roll=Label(self.root,text="Roll No.",font=("goudy old style", 15, "bold"),bg="white",fg="black").place(x=690,y=60)
 
-        txt_search_roll=Entry(self.root,textvariable=self.var_search,font=("goudy old style", 15, "bold"),bg="lightyellow").place(x=840,y=60,width=180)
+        txt_search_roll=Entry(self.root,textvariable=self.var_search,font=("goudy old style", 15, "bold"),bg="lightyellow",fg="black").place(x=840,y=60,width=180)
 
         btn_search=Button(self.root,text="Search",font=("goudy old style",15,"bold"),bg="#2196f3",fg="black",cursor="hand2", command=self.seacrh).place(x=1040,y=60,width=110,height=28)
 

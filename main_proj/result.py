@@ -24,33 +24,35 @@ class resultClass:
         self.roll_list=[]
         self.fetch_roll()
 
-        lbl_select=Label(self.root,text="Select Student",font=("goudy old style", 20, "bold"),bg="white").place(x=50,y=100)
-        lbl_name=Label(self.root,text="Name",font=("goudy old style", 20, "bold"),bg="white").place(x=50,y=160)
-        lbl_course=Label(self.root,text="Course",font=("goudy old style", 20, "bold"),bg="white").place(x=50,y=220)
-        lbl_marks_ob=Label(self.root,text="Marks Obtained",font=("goudy old style", 20, "bold"),bg="white").place(x=50,y=280)
-        lbl_full_marks=Label(self.root,text="Full Marks",font=("goudy old style", 20, "bold"),bg="white").place(x=50,y=340)
+        lbl_select=Label(self.root,text="Select Student",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=50,y=100)
+        lbl_name=Label(self.root,text="Name",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=50,y=160)
+        lbl_course=Label(self.root,text="Course",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=50,y=220)
+        lbl_marks_ob=Label(self.root,text="Marks Obtained",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=50,y=280)
+        lbl_full_marks=Label(self.root,text="Full Marks",font=("goudy old style", 20, "bold"),bg="white",fg="black").place(x=50,y=340)
 
         self.txt_student=ttk.Combobox(self.root,textvariable=self.var_roll,values=self.roll_list,font=("goudy old style", 20, "bold"),state="readonly",justify=CENTER)
         self.txt_student.place(x=280,y=100,width=200)
         self.txt_student.set("Select")
 
-        btn_search=Button(self.root,text="Search",font=("goudy old style",20,"bold"),bg="#2196f3",fg="white",cursor="hand2", command=self.seacrh).place(x=500,y=100,width=100,height=28)
+        btn_search=Button(self.root,text="Search",font=("goudy old style",20,"bold"),bg="lightyellow",fg="black",cursor="hand2", command=self.seacrh).place(x=500,y=100,width=100,height=28)
 
-        txt_name=Entry(self.root,textvariable=self.var_name,font=("goudy old style", 20, "bold"),bg="lightyellow", state="readonly").place(x=280,y=160,width=320)
-        txt_course=Entry(self.root,textvariable=self.var_course,font=("goudy old style", 20, "bold"),bg="lightyellow", state="readonly").place(x=280,y=220,width=320)
-        txt_marks=Entry(self.root,textvariable=self.var_marks,font=("goudy old style", 20, "bold"),bg="lightyellow").place(x=280,y=280,width=320)
-        txt_full_marks=Entry(self.root,textvariable=self.var_full_marks,font=("goudy old style", 20, "bold"),bg="lightyellow").place(x=280,y=340,width=320)
+        txt_name = Entry(self.root, textvariable=self.var_name, font=("goudy old style", 20, "bold"), bg="lightyellow",
+                         fg="black").place(x=280, y=160, width=320)
+        txt_course = Entry(self.root, textvariable=self.var_course, font=("goudy old style", 20, "bold"),
+                           bg="lightyellow", fg="black").place(x=280, y=220, width=320)
+
+        txt_marks=Entry(self.root,textvariable=self.var_marks,font=("goudy old style", 20, "bold"),bg="lightyellow",fg="black").place(x=280,y=280,width=320)
+        txt_full_marks=Entry(self.root,textvariable=self.var_full_marks,font=("goudy old style", 20, "bold"),bg="lightyellow",fg="black").place(x=280,y=340,width=320)
 
         #***********Button***********
         btn_add=Button(self.root,text="Submit",font=("times new roman",15),bg="lightgreen",activebackground="lightgreen",cursor="hand2", command=self.add).place(x=300,y=420,width=120,height=35)
         btn_clear=Button(self.root,text="Clear",font=("times new roman",15),bg="lightgray",activebackground="lightgray",cursor="hand2", command=self.clear).place(x=430,y=420,width=120,height=35)
 
         #***********Image***********
-        self.bg_img=Image.open("images/result.jpg")
-        self.bg_img = self.bg_img.resize((500, 300),
-                                         Image.ANTIALIAS if hasattr(Image, 'ANTIALIAS') else Image.ANTIALIAS)
-        self.bg_img=ImageTk.PhotoImage(self.bg_img)
-
+        self.bg_img_pil = Image.open("snapshots/result.jpg")
+        self.bg_img_pil = self.bg_img_pil.resize(
+            (500,300), Image.ANTIALIAS if "ANTIALIAS" in dir(Image) else Image.BICUBIC)
+        self.bg_img = ImageTk.PhotoImage(self.bg_img_pil)
         self.lbl_bg=Label(self.root, image=self.bg_img).place(x=640, y=100)
 
 #===================================================================
